@@ -14,9 +14,7 @@ google play/
 ├── .mplconfig/                  # Matplotlib 缓存（EDA 画图时可设 MPLCONFIGDIR）
 ├── config/
 │   ├── README.md                # app_list 列说明
-│   ├── app_list.xlsx            # 采集用应用列表（必填 app_id）
-│   └── monitoring.yml           # 监控阈值与漂移参数（`07_monitor`）
-├── logs/                        # 运行时：`pipeline_runs.jsonl`（由 `07_monitor` 相关脚本写入）
+│   └── app_list.xlsx            # 采集用应用列表（必填 app_id）
 ├── data/
 │   ├── raw/
 │   │   └── google_play_reviews_raw.csv    # 采集输出（默认）
@@ -37,7 +35,6 @@ google play/
 │   ├── collection_summary.md              # 采集汇总
 │   ├── raw_collection_metrics.csv
 │   ├── quality_report.csv                 # 清洗分层指标（p0/p1/p2）
-│   ├── monitoring/                      # 运行时：指标历史、告警、报告（`07_monitor`）
 │   ├── eda_sections_workbook.xlsx       # EDA 总表（merge 脚本）
 │   ├── eda_section_a_workbook.xlsx … e   # 各节单独工作簿
 │   ├── EDA_Conclusion_Bilingual.pptx / .pdf   # 结论 slides（04_export）
@@ -51,14 +48,9 @@ google play/
 │   ├── 05_warehouse/
 │   │   ├── load_to_sqlite.py
 │   │   └── run_sqlite_verification.py
-│   ├── 06_insights/
-│   │   ├── export_spike_days.py
-│   │   └── apply_time_window_sampling.py
-│   └── 07_monitor/
-│       ├── collect_run_metrics.py
-│       ├── check_drift_and_alerts.py
-│       ├── _runlog.py
-│       └── smoke_runlog.py
+│   └── 06_insights/
+│       ├── export_spike_days.py
+│       └── apply_time_window_sampling.py
 └── sql/
     ├── schema.sql               # SQLite 表结构（由 load_to_sqlite 自动执行）
     └── verify.sql               # 命令行抽查用 SQL（见下文）
@@ -67,7 +59,6 @@ google play/
 说明：
 
 - **`run_sqlite_verification.py`** 不在上表单独一行，路径见 §5。
-- **`logs/`**、**`reports/monitoring/`** 在首次运行 **`scripts/07_monitor/`** 后才会出现（见 §4.3）；全新克隆时可能没有这两个目录。
 - 根目录下**没有** `templates/`、`scripts/README.md`、`docs/time_window_sampling_note.md`（若你需要「时间窗策略」长文说明，可自行放入 `docs/`；尖峰与采样脚本仍可独立使用）。
 - **`scripts/01_collect/.idea/`** 为 IDE 配置，可忽略。
 
@@ -100,9 +91,6 @@ google play/
 | **`scripts/05_warehouse/`** | `run_sqlite_verification.py` | 查询库并写 **`docs/sqlite_verification_results*.txt`**；**`--both`** 同时校验两个 db |
 | **`scripts/06_insights/`** | `export_spike_days.py` | 读 **`reports/eda_section_b/B3_daily_volume.csv`** → **`docs/spike_dates_top10.csv`** |
 | **`scripts/06_insights/`** | `apply_time_window_sampling.py` | 基于 `clean_en_only` + 可选尖峰表，做去尖峰 / 按日封顶 / 时间切分 |
-| **`scripts/07_monitor/`** | `collect_run_metrics.py` | 上游报告齐全后：追加 **`reports/monitoring/data_quality_history.csv`** 与 **`distribution_history.csv`** |
-| **`scripts/07_monitor/`** | `check_drift_and_alerts.py` | 读配置 + 历史 + SQLite：写 **`alerts.csv`**、**`monitoring_report.md`**；若有 ERROR 则退出码 **`1`** |
-| **`scripts/07_monitor/`** | `_runlog.py`、`smoke_runlog.py` | 运行级 JSONL 日志 + 日志写入自检小脚本 |
 
 ---
 
@@ -115,7 +103,7 @@ google play/
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-# 或等价地：pip install pandas openpyxl google-play-scraper langdetect matplotlib python-pptx reportlab pyyaml
+# 或等价地：pip install pandas openpyxl google-play-scraper langdetect matplotlib python-pptx reportlab
 export MPLCONFIGDIR="$(pwd)/.mplconfig" && mkdir -p .mplconfig
 ```
 
@@ -139,27 +127,8 @@ export MPLCONFIGDIR="$(pwd)/.mplconfig" && mkdir -p .mplconfig
 |  | `sqlite3 data/warehouse/play_reviews_en.db < sql/verify.sql` | 英文库同上 |
 | 10 | `python3 scripts/05_warehouse/run_sqlite_verification.py --both` | 两个 db 均存在时 |
 | 11 | `python3 scripts/06_insights/apply_time_window_sampling.py ...` | 可选；见脚本 `--help` |
-| 12 | `python3 scripts/07_monitor/collect_run_metrics.py` | 上游 CSV 已存在即可（至少 §4.2 步骤 **1–4**，或含 EDA 的完整跑）：追加 `reports/monitoring/*_history.csv` |
-| 13 | `python3 scripts/07_monitor/check_drift_and_alerts.py` | 在步骤 **12** 之后；会读 `data/warehouse/play_reviews.db` 做可选 SQLite 行数对齐——若希望该检查生效，请在步骤 **7–8** 入库之后再跑（否则元数据子集未知时多为 INFO 跳过） |
 
 **说明：** `sql/schema.sql` **不要单独跑**；`load_to_sqlite.py` 会在连接数据库后 `executescript(schema.sql)`。
-
-### 4.3 监控层（`scripts/07_monitor/`）
-
-对流水线产物只读不写业务数据；阈值在 `config/monitoring.yml`。
-
-- **`collect_run_metrics.py`** 与 **`check_drift_and_alerts.py`** 均在 `main` 外包 **`with run_logger(...)`**，每次运行会向 **`logs/pipeline_runs.jsonl`** 追加一行 JSON（与设计文档一致；Phase 2 可扩展到 01–06）。
-- 可选自检：**`python3 scripts/07_monitor/smoke_runlog.py`**，验证 `_runlog` 能写入 JSONL。
-
-典型用法（一次完整跑之后）：
-
-```bash
-python3 scripts/07_monitor/collect_run_metrics.py
-python3 scripts/07_monitor/check_drift_and_alerts.py
-echo "exit=$?"
-```
-
-完整行为见 `monitoring layer设计方案/monitoring_impl_spec_cn.md`。
 
 ---
 
@@ -203,8 +172,6 @@ python3 scripts/06_insights/export_spike_days.py
 python3 scripts/05_warehouse/load_to_sqlite.py
 python3 scripts/05_warehouse/load_to_sqlite.py --english-only
 python3 scripts/05_warehouse/run_sqlite_verification.py --both
-python3 scripts/07_monitor/collect_run_metrics.py
-python3 scripts/07_monitor/check_drift_and_alerts.py
 ```
 
 按需再运行 **`apply_time_window_sampling.py`**（见脚本内示例）。
@@ -222,7 +189,6 @@ python3 scripts/07_monitor/check_drift_and_alerts.py
 | 尖峰 | `docs/spike_dates_top10.csv`、`docs/export_spike_days_readme.md` |
 | 数仓 | `data/warehouse/play_reviews.db`、`play_reviews_en.db` |
 | 校验文本 | `docs/sqlite_verification_results*.txt` |
-| 监控（本地，跑过 §4.3 后） | `reports/monitoring/*_history.csv`、`alerts.csv`、`monitoring_report.md`、`logs/pipeline_runs.jsonl` — **默认不提交**到 Git（见仓库根 `.gitignore`）；用步骤 12–13 重新生成 |
 | 建模前采样（若已跑） | `data/processed/clean_en_time_window.csv`、`time_window_sampling_manifest.json` |
 
 ---
@@ -236,7 +202,7 @@ python3 scripts/07_monitor/check_drift_and_alerts.py
 从空目录到产出完整报表/数据库，建议按同一套步骤复现：
 
 1. **克隆** 本仓库到本地。
-2. **Python 环境：** 建议使用 **Python 3.10+**（一般 3.9+ 也可）。创建虚拟环境后执行 **`pip install -r requirements.txt`**（含监控用的 **`pyyaml`**）。
+2. **Python 环境：** 建议使用 **Python 3.10+**（一般 3.9+ 也可）。创建虚拟环境后执行 **`pip install -r requirements.txt`**。
 3. **`config/app_list.xlsx`：** 按 **`config/README.md`** 填写（至少 **`app_id`**）。采集需要 **联网**；耗时与 `target_reviews` 等相关。
 4. **与上文 Data access 一致：** 克隆后若 **`data/`** 下无大文件属正常；请从 **`scripts/01_collect/collect_reviews.py`** 起按 **§7** 依次执行以生成数据。
 5. **随机性：** 涉及抽样的脚本提供固定种子参数（如 **`apply_time_window_sampling.py`** 的 **`--random-state`**）；同一次配置下抽样可重复。原始评论行数仍受**采集时刻**与上游接口影响。
@@ -246,7 +212,7 @@ python3 scripts/07_monitor/check_drift_and_alerts.py
 
 ## 10. Git 与大文件
 
-建议将 **`data/`** 大 CSV、**`data/warehouse/*.db`**、大型 xlsx，以及 **`google play/logs/`**、**`google play/reports/monitoring/`**（监控运行时产物）等加入 **`.gitignore`**；仓库内只保留小样本或说明。完整数据可用网盘 / Release 并在文档中注明下载方式（与 **§9 可复现** 配套）。
+建议将 **`data/`** 大 CSV、**`data/warehouse/*.db`**、大型 xlsx 等加入 **`.gitignore`**；仓库内只保留小样本或说明。完整数据可用网盘 / Release 并在文档中注明下载方式（与 **§9 可复现** 配套）。
 
 ---
 

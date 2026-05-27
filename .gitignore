@@ -3,6 +3,16 @@
 **/.DS_Store
 .Rhistory
 **/.Rhistory
+.mplconfig/
+**/.mplconfig/
+
+# Local config backups
+**/*.backup.*
+**/*_旧配置.*
+
+# Office lock files
+.~*
+**/.~*
 
 # Python
 __pycache__/
@@ -11,7 +21,3 @@ __pycache__/
 .venv/
 venv/
 env/
-
-# Monitoring runtime outputs (regenerate: collect_run_metrics + check_drift)
-google play/logs/
-google play/reports/monitoring/
