@@ -106,6 +106,9 @@ Main outputs: **`clean_all_languages.csv`** (post-P0, all languages) and **`clea
 | **`scripts/06_insights/`** | `verify_app_base_metrics_vs_eda.py` | Cross-check metrics vs EDA A2 |
 | **`scripts/06_insights/`** | `apply_time_window_sampling.py` | Optional: spike-day removal / per-day cap / time split on `clean_en_only` |
 | **`scripts/04_export/`** | `build_competitor_insights_report_pdf.py` | Business-language metrics PDF from current tables |
+| **`scripts/06_insights/`** | `build_review_themes.py` | Rule-based multi-label tags → **`data/processed/reviews_with_themes.csv`** |
+| **`scripts/06_insights/`** | `build_theme_summary_tables.py` | Theme summaries → **`reports/tables/theme_summary_*.csv`** |
+| **`scripts/06_insights/`** | `sample_theme_validation.py` | Stratified sample for manual theme validation → **`reports/tables/theme_validation_sample.csv`** |
 
 ---
 
@@ -143,7 +146,10 @@ export MPLCONFIGDIR="$(pwd)/.mplconfig" && mkdir -p .mplconfig
 | 12 | `python3 scripts/06_insights/build_health_score.py` | `app_base_metrics.csv` |
 | 13 | `python3 scripts/06_insights/build_competitor_benchmark_tables.py` | `app_health_score.csv` + `app_base_metrics.csv` |
 | 14 | `python3 scripts/04_export/build_competitor_insights_report_pdf.py` | Benchmark tables under `reports/tables/` |
-| 15 | `python3 scripts/06_insights/apply_time_window_sampling.py …` | Optional; see `--help` |
+| 15 | `python3 scripts/06_insights/build_review_themes.py` | `config/themes.yml` + `clean_en_only.csv` |
+| 16 | `python3 scripts/06_insights/build_theme_summary_tables.py` | `reviews_with_themes.csv` |
+| 17 | `python3 scripts/06_insights/sample_theme_validation.py` | Optional: generate manual-review sample (`reports/tables/theme_validation_sample.csv`) |
+| 18 | `python3 scripts/06_insights/apply_time_window_sampling.py …` | Optional; see `--help` |
 
 **Do not run `sql/schema.sql` alone for normal workflow:** `load_to_sqlite.py` applies it via `executescript(schema.sql)` after connecting.
 
@@ -197,6 +203,8 @@ python3 scripts/06_insights/build_app_base_metrics.py
 python3 scripts/06_insights/build_health_score.py
 python3 scripts/06_insights/build_competitor_benchmark_tables.py
 python3 scripts/04_export/build_competitor_insights_report_pdf.py
+python3 scripts/06_insights/build_review_themes.py
+python3 scripts/06_insights/build_theme_summary_tables.py
 ```
 
 Run **`apply_time_window_sampling.py`** when needed (see in-script examples).
