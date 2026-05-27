@@ -1,0 +1,132 @@
+# Rule-based theme taxonomy (design doc §11). Multi-label; match on content_clean.
+# v2 (Day 4): added exclude rules for negation patterns ("not fun", "used to be fun",
+#   "wasn't fun", etc.); tightened account_login, visual_graphics, updates_new_content
+#   to reduce false positives; expanded difficulty_progression keywords.
+version: 2
+
+themes:
+  - id: crash_bug
+    label: Crash & Bug
+    category: Stability
+    polarity: negative
+    keywords: [crash, crashed, crashing, bug, bugs, glitch, glitches, freeze, frozen, black screen]
+    exclude: []
+
+  - id: loading_performance
+    label: Loading & Performance
+    category: Performance
+    polarity: negative
+    keywords: [slow, lag, laggy, loading, load time, stuck, freezes]
+    exclude: []
+
+  - id: ads_volume
+    label: Ads Volume
+    category: Monetization
+    polarity: negative
+    keywords: [too many ads, so many ads, forced ads, pop-up ads, popup ads, ads every]
+    exclude: []
+
+  - id: ads_quality
+    label: Ads Quality
+    category: Monetization
+    polarity: negative
+    keywords: [inappropriate ads, scam ads, misleading ads, bad ads]
+    exclude: []
+
+  - id: pay_to_win
+    label: Pay-to-win / Greedy
+    category: Monetization
+    polarity: negative
+    keywords: [pay to win, pay-to-win, money grab, greedy, too expensive, rip off, ripoff, cash grab]
+    exclude: []
+
+  - id: purchase_issue
+    label: Purchase Issue
+    category: Monetization
+    polarity: negative
+    keywords: [refund, charged, charge, payment failed, didn't receive, did not receive, purchase failed]
+    exclude: []
+
+  - id: difficulty_progression
+    label: Difficulty & Progression
+    category: Game Design
+    polarity: negative
+    keywords: [too hard, too difficult, very hard, super hard, hardest, impossible level, impossible levels, stuck on level, stuck on the same level, can't pass, cant pass, can't get past, out of lives, not enough lives, hard to pass, hard level]
+    exclude: []
+
+  - id: algorithm_fairness
+    label: Algorithm Fairness
+    category: Game Design
+    polarity: negative
+    keywords: [rigged, scripted, manipulated, set up to fail, unfair]
+    exclude: []
+
+  - id: rewards_energy
+    label: Rewards & Energy
+    category: Game Design
+    polarity: negative
+    keywords: [not enough rewards, not enough coins, not enough energy, run out of energy, need more boosters]
+    exclude: []
+
+  - id: update_issue
+    label: Update Issue
+    category: Operations
+    polarity: negative
+    keywords: [after update, latest update, new update, new version broke, since the update, update ruined]
+    exclude: []
+
+  - id: liveops_events
+    label: LiveOps & Events
+    category: Operations
+    polarity: negative
+    keywords: [event bug, tournament glitch, team event, liveops]
+    exclude: []
+
+  - id: account_login
+    label: Account & Login
+    category: Account
+    polarity: negative
+    keywords: [login problem, log in problem, log in issue, login issue, lost progress, sync failed, cannot log, can't log, cant log in, can't sign in, account lost]
+    exclude: []
+
+  - id: ui_navigation
+    label: UI / Navigation
+    category: UX
+    polarity: negative
+    keywords: [confusing menu, tutorial unclear, hard to find, ui is bad, navigation]
+    exclude: []
+
+  - id: fun_addictive
+    label: Fun & Addictive
+    category: Positive
+    polarity: positive
+    keywords: [fun, addictive, love it, love this game, relaxing, enjoyable, really enjoy, really fun, so much fun, very fun]
+    exclude: [not fun, no fun, not really fun, not very fun, not that fun, wasn't fun, isn't fun, used to be fun, no longer fun, takes the fun out, not enjoyable, not addictive, don't love, do not love, hate it, hated it, no longer enjoyable]
+
+  - id: visual_graphics
+    label: Visual & Graphics
+    category: Positive
+    polarity: positive
+    keywords: [beautiful, cute, great graphics, lovely graphics, nice graphics, great design, looks amazing, visually stunning, visually beautiful, art style]
+    exclude: [not beautiful, not cute, bad graphics, ugly graphics, graphics are bad, graphics suck]
+
+  - id: story_decoration
+    label: Story & Decoration
+    category: Positive
+    polarity: positive
+    keywords: [story, decorate, decorating, garden, mansion, room design]
+    exclude: []
+
+  - id: social_team
+    label: Social & Team
+    category: Positive
+    polarity: positive
+    keywords: [team, friends, leaderboard, compete, multiplayer, guild]
+    exclude: []
+
+  - id: updates_new_content
+    label: Updates & New Content
+    category: Positive
+    polarity: positive
+    keywords: [new levels, fresh content, frequent updates, love the update, love the new update, great update, nice update]
+    exclude: [hate the update, ruined the update, update ruined, after the update everything, update broke]
