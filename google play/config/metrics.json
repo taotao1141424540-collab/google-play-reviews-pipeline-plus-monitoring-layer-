@@ -1,0 +1,14 @@
+{
+  "_comment": "Aligns with docs/business_design/business_scope_three_layer_design.md Appendix A–C.",
+  "bayesian_k": 200,
+  "confidence_reference_n": 200,
+  "weights": {
+    "level": 0.4,
+    "polarization": 0.35,
+    "momentum": 0.25
+  },
+  "momentum": {
+    "calendar_weeks_window": 8,
+    "min_distinct_weeks_for_slope": 3
+  }
+}

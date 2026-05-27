@@ -2,6 +2,10 @@
 """
 Build bilingual (ZH + EN) EDA conclusion deck: PPTX + PDF.
 
+Row counts and English share are read from:
+  reports/quality_report.csv (primary)
+  reports/eda_section_a/A5_data_scale_chain.csv (fallback / file paths)
+
 Outputs:
   reports/EDA_Conclusion_Bilingual.pptx
   reports/EDA_Conclusion_Bilingual.pdf
@@ -9,6 +13,7 @@ Outputs:
 
 from __future__ import annotations
 
+import csv
 from pathlib import Path
 
 from pptx import Presentation
@@ -16,14 +21,134 @@ from pptx.enum.text import PP_ALIGN
 from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[2]
+QUALITY_CSV = ROOT / "reports" / "quality_report.csv"
+A5_CSV = ROOT / "reports" / "eda_section_a" / "A5_data_scale_chain.csv"
 OUT_PPTX = ROOT / "reports" / "EDA_Conclusion_Bilingual.pptx"
 OUT_PDF = ROOT / "reports" / "EDA_Conclusion_Bilingual.pdf"
 
-# Key figures (update if you re-run pipeline)
-RAW_ROWS = 15_390
-CLEAN_ALL_ROWS = 13_879
-CLEAN_EN_ROWS = 10_072
-EN_SHARE_ON_CLEAN_ALL = 0.7257
+
+def _int_or_none(s: str | None) -> int | None:
+    if s is None or str(s).strip() == "":
+        return None
+    try:
+        return int(float(str(s).strip()))
+    except ValueError:
+        return None
+
+
+def _float_or_none(s: str | None) -> float | None:
+    if s is None or str(s).strip() == "":
+        return None
+    try:
+        return float(str(s).strip())
+    except ValueError:
+        return None
+
+
+def _load_quality_pairs(path: Path) -> dict[tuple[str, str], str]:
+    out: dict[tuple[str, str], str] = {}
+    with path.open(encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            sec = (row.get("section") or "").strip()
+            met = (row.get("metric") or "").strip()
+            val = row.get("value")
+            if sec and met and val is not None:
+                out[(sec, met)] = str(val).strip()
+    return out
+
+
+def _load_a5(path: Path) -> tuple[dict[str, int], dict[str, str]]:
+    """Returns (rows_by_stage, file_by_stage)."""
+    rows_map: dict[str, int] = {}
+    files_map: dict[str, str] = {}
+    if not path.is_file():
+        return rows_map, files_map
+    with path.open(encoding="utf-8-sig", newline="") as f:
+        r = csv.DictReader(f)
+        for row in r:
+            stage = (row.get("stage") or "").strip()
+            if not stage:
+                continue
+            rv = row.get("rows")
+            if rv is not None and str(rv).strip() != "":
+                try:
+                    rows_map[stage] = int(float(str(rv).strip()))
+                except ValueError:
+                    pass
+            fp = row.get("file")
+            if fp is not None and str(fp).strip():
+                files_map[stage] = str(fp).strip()
+    return rows_map, files_map
+
+
+def load_metrics() -> dict[str, object]:
+    """
+    Merge quality_report (preferred for counts + english_rate) with A5 chain
+    (fallback counts + concrete filenames).
+    """
+    raw_rows: int | None = None
+    clean_all_rows: int | None = None
+    clean_en_rows: int | None = None
+    en_share: float | None = None
+    run_time: str | None = None
+
+    if QUALITY_CSV.is_file():
+        pairs = _load_quality_pairs(QUALITY_CSV)
+        raw_rows = _int_or_none(pairs.get(("p0", "raw_rows")))
+        clean_all_rows = _int_or_none(pairs.get(("p0", "clean_all_rows")))
+        clean_en_rows = _int_or_none(pairs.get(("output", "clean_en_rows")))
+        en_share = _float_or_none(pairs.get(("p1", "english_rate_after_p0")))
+        run_time = pairs.get(("run", "run_time"))
+
+    a5_rows, a5_files = _load_a5(A5_CSV)
+    if raw_rows is None:
+        raw_rows = a5_rows.get("raw")
+    if clean_all_rows is None:
+        clean_all_rows = a5_rows.get("after_P0_all_languages")
+    if clean_en_rows is None:
+        clean_en_rows = a5_rows.get("after_P0_english_only")
+
+    raw_file = Path(a5_files.get("raw", "data/raw/google_play_reviews_raw.csv")).name
+    clean_all_file = Path(
+        a5_files.get("after_P0_all_languages", "data/processed/clean_all_languages.csv")
+    ).name
+    clean_en_file = Path(a5_files.get("after_P0_english_only", "data/processed/clean_en_only.csv")).name
+
+    if en_share is None and clean_all_rows and clean_en_rows and clean_all_rows > 0:
+        en_share = clean_en_rows / clean_all_rows
+
+    missing = [
+        n
+        for n, v in [
+            ("raw_rows", raw_rows),
+            ("clean_all_rows", clean_all_rows),
+            ("clean_en_rows", clean_en_rows),
+        ]
+        if v is None
+    ]
+    if missing:
+        raise FileNotFoundError(
+            "Cannot resolve row counts: "
+            + ", ".join(missing)
+            + ". Ensure "
+            + f"`{QUALITY_CSV.relative_to(ROOT)}` and/or `{A5_CSV.relative_to(ROOT)}` exists "
+            + "and re-run clean + EDA section A."
+        )
+
+    assert raw_rows is not None and clean_all_rows is not None and clean_en_rows is not None
+    if en_share is None:
+        en_share = clean_en_rows / clean_all_rows if clean_all_rows else 0.0
+
+    return {
+        "raw_rows": raw_rows,
+        "clean_all_rows": clean_all_rows,
+        "clean_en_rows": clean_en_rows,
+        "en_share": float(en_share),
+        "raw_file": raw_file,
+        "clean_all_file": clean_all_file,
+        "clean_en_file": clean_en_file,
+        "run_time": run_time,
+    }
 
 
 def _add_slide_title_body(prs: Presentation, title_zh: str, title_en: str, lines: list[tuple[str, str]]) -> None:
@@ -51,7 +176,16 @@ def _add_slide_title_body(prs: Presentation, title_zh: str, title_en: str, lines
         para2.level = 0
 
 
-def build_pptx() -> None:
+def build_pptx(m: dict[str, object]) -> None:
+    raw_rows = int(m["raw_rows"])
+    clean_all_rows = int(m["clean_all_rows"])
+    clean_en_rows = int(m["clean_en_rows"])
+    en_share = float(m["en_share"])
+    raw_file = str(m["raw_file"])
+    clean_all_file = str(m["clean_all_file"])
+    clean_en_file = str(m["clean_en_file"])
+    run_time = m.get("run_time")
+
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
@@ -65,7 +199,12 @@ def build_pptx() -> None:
     t.paragraphs[0].font.bold = True
     t.add_paragraph().text = "Google Play 评论数据 · 探索性数据分析结论（中英双语）"
     t.paragraphs[1].font.size = Pt(20)
-    t.add_paragraph().text = "Sciencia AI / Mentor update · Apr 2026"
+    subtitle = (
+        f"Figures from quality_report.csv + A5_data_scale_chain.csv · {run_time}"
+        if run_time
+        else "Figures from quality_report.csv + eda_section_a/A5_data_scale_chain.csv"
+    )
+    t.add_paragraph().text = subtitle
     t.paragraphs[2].font.size = Pt(14)
 
     _add_slide_title_body(
@@ -74,8 +213,8 @@ def build_pptx() -> None:
         "Executive Summary · 执行摘要",
         [
             (
-                f"Built an English analysis set of **{CLEAN_EN_ROWS:,}** reviews (≥10k target met).",
-                f"构建英文分析集 **{CLEAN_EN_ROWS:,}** 条，满足 mentor 提出的 **10k+** 规模要求。",
+                f"Built an English analysis set of **{clean_en_rows:,}** reviews (≥10k target met).",
+                f"构建英文分析集 **{clean_en_rows:,}** 条，满足 mentor 提出的 **10k+** 规模要求。",
             ),
             (
                 "Completed EDA Sections A–E: distributions, cross-app patterns, language mix, light text, risk flags.",
@@ -93,18 +232,18 @@ def build_pptx() -> None:
         "数据规模 Data volume",
         "Data volume · 数据规模",
         [
-            (f"Raw rows: **{RAW_ROWS:,}** (`google_play_reviews_raw.xlsx`)", f"原始数据：**{RAW_ROWS:,}** 行"),
+            (f"Raw rows: **{raw_rows:,}** (`{raw_file}`)", f"原始数据：**{raw_rows:,}** 行（`{raw_file}`）"),
             (
-                f"After P0 (all languages): **{CLEAN_ALL_ROWS:,}** (`clean_all_languages.xlsx`)",
-                f"P0 后全语言：**{CLEAN_ALL_ROWS:,}** 行",
+                f"After P0 (all languages): **{clean_all_rows:,}** (`{clean_all_file}`)",
+                f"P0 后全语言：**{clean_all_rows:,}** 行（`{clean_all_file}`）",
             ),
             (
-                f"After P0 + English filter: **{CLEAN_EN_ROWS:,}** (`clean_en_only.xlsx`)",
-                f"P0 + 英文子集：**{CLEAN_EN_ROWS:,}** 行",
+                f"After P0 + English filter: **{clean_en_rows:,}** (`{clean_en_file}`)",
+                f"P0 + 英文子集：**{clean_en_rows:,}** 行（`{clean_en_file}`）",
             ),
             (
-                f"English share on P0-all-lang set: ~**{EN_SHARE_ON_CLEAN_ALL:.1%}** (`is_en` / langdetect)",
-                f"P0 全语言集中英文占比约 **{EN_SHARE_ON_CLEAN_ALL:.1%}**（`is_en` / 语言检测）",
+                f"English share on P0-all-lang set: ~**{en_share:.1%}** (`is_en` / langdetect)",
+                f"P0 全语言集中英文占比约 **{en_share:.1%}**（`is_en` / 语言检测）",
             ),
         ],
     )
@@ -177,7 +316,12 @@ def build_pptx() -> None:
     prs.save(OUT_PPTX)
 
 
-def build_pdf() -> None:
+def build_pdf(m: dict[str, object]) -> None:
+    clean_en_rows = int(m["clean_en_rows"])
+    raw_rows = int(m["raw_rows"])
+    clean_all_rows = int(m["clean_all_rows"])
+    en_share = float(m["en_share"])
+
     from reportlab.lib.pagesizes import LETTER
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
     from reportlab.lib.units import inch
@@ -234,8 +378,8 @@ def build_pdf() -> None:
             "1. 执行摘要",
             [
                 (
-                    f"We deliver <b>{CLEAN_EN_ROWS:,}</b> English reviews after P0 cleaning (≥10k requirement satisfied).",
-                    f"P0 清洗后英文子集 <b>{CLEAN_EN_ROWS:,}</b> 条，满足 <b>10k+</b> 要求。",
+                    f"We deliver <b>{clean_en_rows:,}</b> English reviews after P0 cleaning (≥10k requirement satisfied).",
+                    f"P0 清洗后英文子集 <b>{clean_en_rows:,}</b> 条，满足 <b>10k+</b> 要求。",
                 ),
                 (
                     "EDA Sections A–E cover distributions, patterns, language, token contrasts, and heuristic risk flags.",
@@ -251,12 +395,12 @@ def build_pdf() -> None:
             "2. Data volume chain",
             "2. 数据规模链路",
             [
-                (f"Raw: <b>{RAW_ROWS:,}</b> rows.", f"原始：<b>{RAW_ROWS:,}</b> 行。"),
-                (f"P0 all languages: <b>{CLEAN_ALL_ROWS:,}</b> rows.", f"P0 全语言：<b>{CLEAN_ALL_ROWS:,}</b> 行。"),
-                (f"P0 English subset: <b>{CLEAN_EN_ROWS:,}</b> rows.", f"P0 英文：<b>{CLEAN_EN_ROWS:,}</b> 行。"),
+                (f"Raw: <b>{raw_rows:,}</b> rows.", f"原始：<b>{raw_rows:,}</b> 行。"),
+                (f"P0 all languages: <b>{clean_all_rows:,}</b> rows.", f"P0 全语言：<b>{clean_all_rows:,}</b> 行。"),
+                (f"P0 English subset: <b>{clean_en_rows:,}</b> rows.", f"P0 英文：<b>{clean_en_rows:,}</b> 行。"),
                 (
-                    f"English share on P0-all-lang: ~<b>{EN_SHARE_ON_CLEAN_ALL:.1%}</b>.",
-                    f"P0 全语言集中英文占比约 <b>{EN_SHARE_ON_CLEAN_ALL:.1%}</b>。",
+                    f"English share on P0-all-lang: ~<b>{en_share:.1%}</b>.",
+                    f"P0 全语言集中英文占比约 <b>{en_share:.1%}</b>。",
                 ),
             ],
         ),
@@ -302,9 +446,14 @@ def build_pdf() -> None:
 
 
 def main() -> None:
-    build_pptx()
-    build_pdf()
+    m = load_metrics()
+    build_pptx(m)
+    build_pdf(m)
     print(f"Saved:\n- {OUT_PPTX}\n- {OUT_PDF}")
+    print(
+        f"Metrics: raw={m['raw_rows']:,} p0_all={m['clean_all_rows']:,} "
+        f"en={m['clean_en_rows']:,} en_share={float(m['en_share']):.4f}"
+    )
 
 
 if __name__ == "__main__":

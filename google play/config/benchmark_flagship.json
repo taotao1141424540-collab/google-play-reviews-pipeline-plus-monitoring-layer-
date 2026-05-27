@@ -1,0 +1,13 @@
+{
+  "_comment": "Seven flagship apps for focused competitor narrative (subset of 14-app pool). Edit app_ids to match your story.",
+  "app_ids": [
+    "com.dreamgames.royalmatch",
+    "com.king.candycrushsaga",
+    "com.playrix.gardenscapes",
+    "net.peakgames.toonblast",
+    "air.com.sgn.cookiejam.gp",
+    "com.disney.emojimatch_goo",
+    "com.rovio.dream"
+  ],
+  "selection_rationale": "Cross-publisher mix: Dream/King/Playrix/Peak/SGN/Disney/Rovio; covers Match-3, blast, and IP-heavy casual titles."
+}

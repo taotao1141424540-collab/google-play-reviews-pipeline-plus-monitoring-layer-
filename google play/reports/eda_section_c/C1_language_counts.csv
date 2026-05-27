@@ -1,50 +1,49 @@
 language_name_en,count,detected_lang_code
-English,10169,en
-Afrikaans,558,af
-Somali,309,so
-Italian,256,it
-Romanian,232,ro
-Norwegian,193,no
-French,188,fr
-Catalan,186,ca
-Indonesian,159,id
-Tagalog,138,tl
-Slovenian,125,sl
-Polish,119,pl
-Welsh,108,cy
-Czech,108,cs
-Dutch,81,nl
-Swahili,79,sw
-Albanian,77,sq
-Danish,69,da
-Bengali,63,bn
-Arabic,62,ar
-Estonian,60,et
-Spanish,56,es
-Croatian,53,hr
-Unknown (undetected or too short),50,unknown
-Swedish,48,sv
-Portuguese,40,pt
-Russian,38,ru
-Finnish,29,fi
-Turkish,24,tr
-Slovak,24,sk
-Latvian,17,lv
-Hindi,14,hi
-Persian (Farsi),13,fa
-Hungarian,12,hu
-German,9,de
-Lithuanian,8,lt
-Urdu,6,ur
-Thai,5,th
-Chinese (Simplified),4,zh-cn
-Vietnamese,4,vi
-Tamil,3,ta
-Ukrainian,2,uk
-Korean,2,ko
+English,10940,en
+Afrikaans,501,af
+Somali,493,so
+Norwegian,338,no
+Romanian,333,ro
+Spanish,311,es
+Slovenian,309,sl
+Polish,267,pl
+Catalan,222,ca
+Danish,192,da
+Albanian,171,sq
+Italian,153,it
+Welsh,140,cy
+Tagalog,133,tl
+French,112,fr
+Indonesian,91,id
+Croatian,77,hr
+Swahili,64,sw
+Dutch,61,nl
+Czech,52,cs
+Unknown (undetected or too short),51,unknown
+Estonian,50,et
+Swedish,50,sv
+Portuguese,25,pt
+Finnish,21,fi
+Hungarian,21,hu
+Slovak,18,sk
+German,17,de
+Turkish,16,tr
+Arabic,11,ar
+Latvian,8,lv
+Lithuanian,6,lt
+Bengali,5,bn
+Hindi,5,hi
+Persian (Farsi),5,fa
+Marathi,3,mr
+Telugu,2,te
+Vietnamese,2,vi
+Kannada,2,kn
+Russian,2,ru
+Urdu,2,ur
+Chinese (Simplified),2,zh-cn
+Thai,1,th
 Nepali,1,ne
-Other language (el),1,el
 Other language (ml),1,ml
-Marathi,1,mr
-Macedonian,1,mk
-Kannada,1,kn
+Ukrainian,1,uk
+Tamil,1,ta
+Other language (gu),1,gu

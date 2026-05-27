@@ -1,20 +1,20 @@
 # EDA Section A — Summary
 
 ## Data sources
-- clean_en_only: `data/processed/clean_en_only.csv` (10,169 rows)
-- clean_all_languages: `data/processed/clean_all_languages.csv` (13,806 rows)
-- raw: `data/raw/google_play_reviews_raw.csv` (15,405 rows)
+- clean_en_only: `data/processed/clean_en_only.csv` (10,940 rows)
+- clean_all_languages: `data/processed/clean_all_languages.csv` (15,290 rows)
+- raw: `data/raw/google_play_reviews_raw.csv` (16,800 rows)
 
 ## A5 Scale chain
 
                  stage                                   file  rows
-                   raw   data/raw/google_play_reviews_raw.csv 15405
-after_P0_all_languages data/processed/clean_all_languages.csv 13806
- after_P0_english_only       data/processed/clean_en_only.csv 10169
+                   raw   data/raw/google_play_reviews_raw.csv 16800
+after_P0_all_languages data/processed/clean_all_languages.csv 15290
+ after_P0_english_only       data/processed/clean_en_only.csv 10940
 
 ## A6 / A7
 - noise_rate (is_noise): 0.0000
-- has_dev_reply_rate: 0.1481
+- has_dev_reply_rate: 0.2938
 
 ## Generated files
 

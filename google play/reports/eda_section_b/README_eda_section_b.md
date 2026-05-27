@@ -2,7 +2,7 @@
 
 ## Input
 - `data/processed/clean_en_only.xlsx` or `clean_en_only.csv`
-- Rows: 10,169
+- Rows: 10,940
 
 ## Outputs
 
