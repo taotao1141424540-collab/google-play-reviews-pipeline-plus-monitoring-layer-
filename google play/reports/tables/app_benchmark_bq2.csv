@@ -1,0 +1,15 @@
+﻿app_id,app_name,publisher,category,n_reviews,mean_score,median_score,share_high_4_5,share_low_1_2,bayesian_adjusted_avg,health_score_rank,health_score,component_confidence
+com.disney.emojimatch_goo,Disney Emoji Blitz,Disney,Match-3 + IP,979,3.839632,5.0,0.6762,0.217569,3.8117898821949625,5,0.8054172809051118,1.0
+com.dreamgames.royalkingdom,Royal Kingdom,Dream Games,Match-3,859,2.488941,2.0,0.318976,0.606519,2.7130319755503884,14,0.354760908044031,1.0
+com.dreamgames.royalmatch,Royal Match,Dream Games,Match-3,684,3.328947,4.0,0.542398,0.371345,3.4073532704840055,13,0.5827087412868469,1.0
+com.king.candycrushsaga,Candy Crush Saga,King,Match-3,513,4.22807,5.0,0.812865,0.146199,4.07307216424665,2,0.8130234216230809,1.0
+com.king.candycrushsodasaga,Candy Crush Soda Saga,King,Match-3,650,3.967692,5.0,0.707692,0.218462,3.898941580126896,7,0.7791105910652145,1.0
+net.peakgames.toonblast,Toon Blast,Peak Games,Blast Puzzle,787,3.401525,4.0,0.564168,0.362135,3.457042267586486,11,0.6717560757498016,1.0
+net.peakgames.amy,Toy Blast,Peak Games,Blast Puzzle,750,3.888,5.0,0.7,0.238667,3.843263729587222,6,0.7871153820622461,1.0
+com.playrix.gardenscapes,Gardenscapes,Playrix,Match-3 + Decoration,630,3.48254,5.0,0.587302,0.339683,3.529037039888989,10,0.6721854607995814,1.0
+com.playrix.homescapes,Homescapes,Playrix,Match-3 + Decoration,672,3.824405,5.0,0.693452,0.25,3.790253099894336,12,0.6644342523195287,1.0
+com.rovio.dream,Angry Birds Dream Blast,Rovio,Blast + IP,841,3.766944,5.0,0.663496,0.265161,3.749376029882672,4,0.8071437323906138,1.0
+com.rovio.angrybirdsfriends,Angry Birds Friends,Rovio,Slingshot Puzzle + IP,711,3.599156,5.0,0.616034,0.30661,3.615917079152427,8,0.7669533037576732,1.0
+air.com.sgn.cookiejam.gp,Cookie Jam,SGN (Jam City),Match-3,881,4.081725,5.0,0.734393,0.181612,4.006568240617818,3,0.8081558127304354,1.0
+dk.tactile.lilysgarden,Lily's Garden,Tactile Games,Match-3 + Story + Garden,997,3.734203,5.0,0.645938,0.27683,3.7243950995053137,9,0.748550631794233,1.0
+dk.tactile.mansionstory,Penny & Flo,Tactile Games,Match-3 + Story + Decoration,986,3.940162,5.0,0.70284,0.203854,3.8955314292646386,1,0.8214714583916874,1.0

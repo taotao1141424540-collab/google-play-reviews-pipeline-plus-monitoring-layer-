@@ -1,0 +1,9 @@
+﻿publisher,publisher_health_rank,n_apps,total_n_reviews,weighted_mean_score,weighted_bayesian_adjusted_avg,weighted_health_score
+SGN (Jam City),1,1,881,4.081725,4.006568,0.808156
+Disney,2,1,979,3.839632,3.81179,0.805417
+King,3,2,1163,4.082545,3.975751,0.79407
+Rovio,4,2,1552,3.690077,3.688236,0.788732
+Tactile Games,5,2,1983,3.836611,3.809489,0.784809
+Peak Games,6,2,1537,3.638907,3.645504,0.728047
+Playrix,7,2,1302,3.658986,3.663858,0.668185
+Dream Games,8,2,1543,2.861309,3.020819,0.455808

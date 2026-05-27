@@ -1,0 +1,8 @@
+﻿app_id,app_name,publisher,category,n_reviews,mean_score,median_score,share_high_4_5,share_low_1_2,bayesian_adjusted_avg,health_score_rank,health_score,component_confidence
+com.dreamgames.royalmatch,Royal Match,Dream Games,Match-3,684,3.328947,4.0,0.542398,0.371345,3.4073532704840055,13,0.5827087412868469,1.0
+com.king.candycrushsaga,Candy Crush Saga,King,Match-3,513,4.22807,5.0,0.812865,0.146199,4.07307216424665,2,0.8130234216230809,1.0
+com.playrix.gardenscapes,Gardenscapes,Playrix,Match-3 + Decoration,630,3.48254,5.0,0.587302,0.339683,3.529037039888989,10,0.6721854607995814,1.0
+net.peakgames.toonblast,Toon Blast,Peak Games,Blast Puzzle,787,3.401525,4.0,0.564168,0.362135,3.457042267586486,11,0.6717560757498016,1.0
+air.com.sgn.cookiejam.gp,Cookie Jam,SGN (Jam City),Match-3,881,4.081725,5.0,0.734393,0.181612,4.006568240617818,3,0.8081558127304354,1.0
+com.disney.emojimatch_goo,Disney Emoji Blitz,Disney,Match-3 + IP,979,3.839632,5.0,0.6762,0.217569,3.8117898821949625,5,0.8054172809051118,1.0
+com.rovio.dream,Angry Birds Dream Blast,Rovio,Blast + IP,841,3.766944,5.0,0.663496,0.265161,3.749376029882672,4,0.8071437323906138,1.0
