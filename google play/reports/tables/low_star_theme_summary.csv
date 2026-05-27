@@ -1,0 +1,17 @@
+﻿theme_id,n_low_star_reviews,low_star_theme_share,theme_label,category,polarity
+fun_addictive,382,0.122084,Fun & Addictive,Positive,positive
+crash_bug,252,0.080537,Crash & Bug,Stability,negative
+loading_performance,178,0.056887,Loading & Performance,Performance,negative
+pay_to_win,122,0.03899,Pay-to-win / Greedy,Monetization,negative
+difficulty_progression,113,0.036114,Difficulty & Progression,Game Design,negative
+story_decoration,103,0.032918,Story & Decoration,Positive,positive
+social_team,78,0.024928,Social & Team,Positive,positive
+ads_volume,48,0.01534,Ads Volume,Monetization,negative
+algorithm_fairness,47,0.015021,Algorithm Fairness,Game Design,negative
+update_issue,47,0.015021,Update Issue,Operations,negative
+purchase_issue,27,0.008629,Purchase Issue,Monetization,negative
+visual_graphics,15,0.004794,Visual & Graphics,Positive,positive
+updates_new_content,12,0.003835,Updates & New Content,Positive,positive
+ads_quality,3,0.000959,Ads Quality,Monetization,negative
+account_login,3,0.000959,Account & Login,Account,negative
+ui_navigation,1,0.00032,UI / Navigation,UX,negative

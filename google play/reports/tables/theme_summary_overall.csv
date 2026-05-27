@@ -1,0 +1,19 @@
+﻿theme_id,n_reviews,theme_share,mean_score,rating_gap,share_low_1_2,low_star_theme_share,theme_label,category,polarity
+fun_addictive,3567,0.326051,4.404261,-0.728759,0.107093,0.122084,Fun & Addictive,Positive,positive
+story_decoration,519,0.047441,3.982659,-0.307156,0.198459,0.032918,Story & Decoration,Positive,positive
+crash_bug,443,0.040494,2.397291,1.278212,0.568849,0.080537,Crash & Bug,Stability,negative
+loading_performance,343,0.031353,2.594752,1.080751,0.51895,0.056887,Loading & Performance,Performance,negative
+visual_graphics,239,0.021846,4.569038,-0.893535,0.062762,0.004794,Visual & Graphics,Positive,positive
+social_team,230,0.021024,3.434783,0.24072,0.33913,0.024928,Social & Team,Positive,positive
+difficulty_progression,216,0.019744,2.643519,1.031984,0.523148,0.036114,Difficulty & Progression,Game Design,negative
+pay_to_win,154,0.014077,1.603896,2.071607,0.792208,0.03899,Pay-to-win / Greedy,Monetization,negative
+update_issue,90,0.008227,2.488889,1.186614,0.522222,0.015021,Update Issue,Operations,negative
+ads_volume,78,0.00713,2.24359,1.431913,0.615385,0.01534,Ads Volume,Monetization,negative
+algorithm_fairness,62,0.005667,1.725806,1.949696,0.758065,0.015021,Algorithm Fairness,Game Design,negative
+updates_new_content,39,0.003565,3.461538,0.213964,0.307692,0.003835,Updates & New Content,Positive,positive
+purchase_issue,35,0.003199,1.8,1.875503,0.771429,0.008629,Purchase Issue,Monetization,negative
+account_login,8,0.000731,2.75,0.925503,0.375,0.000959,Account & Login,Account,negative
+ads_quality,3,0.000274,1.0,2.675503,1.0,0.000959,Ads Quality,Monetization,negative
+rewards_energy,2,0.000183,3.5,0.175503,0.0,0.0,Rewards & Energy,Game Design,negative
+liveops_events,2,0.000183,4.5,-0.824497,0.0,0.0,LiveOps & Events,Operations,negative
+ui_navigation,1,9.1e-05,1.0,2.675503,1.0,0.00032,UI / Navigation,UX,negative

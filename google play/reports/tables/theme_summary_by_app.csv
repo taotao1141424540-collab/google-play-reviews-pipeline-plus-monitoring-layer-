@@ -1,0 +1,181 @@
+﻿app_id,app_name,theme_id,n_reviews,theme_share_in_app,mean_score,rating_gap,share_low_1_2,theme_label,category,polarity
+air.com.sgn.cookiejam.gp,Cookie Jam,crash_bug,42,0.047673,2.952381,1.129344,0.357143,Crash & Bug,Stability,negative
+air.com.sgn.cookiejam.gp,Cookie Jam,loading_performance,31,0.035187,3.193548,0.888177,0.354839,Loading & Performance,Performance,negative
+air.com.sgn.cookiejam.gp,Cookie Jam,ads_volume,20,0.022701,2.9,1.181725,0.45,Ads Volume,Monetization,negative
+air.com.sgn.cookiejam.gp,Cookie Jam,pay_to_win,7,0.007946,2.0,2.081725,0.714286,Pay-to-win / Greedy,Monetization,negative
+air.com.sgn.cookiejam.gp,Cookie Jam,difficulty_progression,7,0.007946,3.857143,0.224582,0.0,Difficulty & Progression,Game Design,negative
+air.com.sgn.cookiejam.gp,Cookie Jam,algorithm_fairness,3,0.003405,2.666667,1.415059,0.333333,Algorithm Fairness,Game Design,negative
+air.com.sgn.cookiejam.gp,Cookie Jam,update_issue,4,0.00454,2.25,1.831725,0.5,Update Issue,Operations,negative
+air.com.sgn.cookiejam.gp,Cookie Jam,fun_addictive,363,0.412032,4.589532,-0.507806,0.068871,Fun & Addictive,Positive,positive
+air.com.sgn.cookiejam.gp,Cookie Jam,visual_graphics,10,0.011351,4.0,0.081725,0.3,Visual & Graphics,Positive,positive
+air.com.sgn.cookiejam.gp,Cookie Jam,story_decoration,3,0.003405,3.666667,0.415059,0.0,Story & Decoration,Positive,positive
+air.com.sgn.cookiejam.gp,Cookie Jam,social_team,13,0.014756,3.692308,0.389418,0.307692,Social & Team,Positive,positive
+air.com.sgn.cookiejam.gp,Cookie Jam,updates_new_content,5,0.005675,4.4,-0.318275,0.0,Updates & New Content,Positive,positive
+com.disney.emojimatch_goo,Disney Emoji Blitz,crash_bug,55,0.05618,2.472727,1.366905,0.545455,Crash & Bug,Stability,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,loading_performance,32,0.032686,2.59375,1.245882,0.5,Loading & Performance,Performance,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,ads_volume,2,0.002043,4.0,-0.160368,0.0,Ads Volume,Monetization,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,pay_to_win,22,0.022472,2.136364,1.703269,0.5,Pay-to-win / Greedy,Monetization,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,purchase_issue,8,0.008172,1.5,2.339632,0.875,Purchase Issue,Monetization,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,difficulty_progression,7,0.00715,4.142857,-0.303225,0.142857,Difficulty & Progression,Game Design,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,algorithm_fairness,6,0.006129,2.333333,1.506299,0.5,Algorithm Fairness,Game Design,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,update_issue,7,0.00715,2.857143,0.982489,0.428571,Update Issue,Operations,negative
+com.disney.emojimatch_goo,Disney Emoji Blitz,fun_addictive,461,0.470889,4.407809,-0.568177,0.084599,Fun & Addictive,Positive,positive
+com.disney.emojimatch_goo,Disney Emoji Blitz,visual_graphics,46,0.046987,4.282609,-0.442976,0.086957,Visual & Graphics,Positive,positive
+com.disney.emojimatch_goo,Disney Emoji Blitz,social_team,21,0.02145,3.619048,0.220585,0.238095,Social & Team,Positive,positive
+com.dreamgames.royalkingdom,Royal Kingdom,crash_bug,3,0.003492,3.0,-0.511059,0.333333,Crash & Bug,Stability,negative
+com.dreamgames.royalkingdom,Royal Kingdom,loading_performance,17,0.01979,2.235294,0.253647,0.647059,Loading & Performance,Performance,negative
+com.dreamgames.royalkingdom,Royal Kingdom,ads_volume,21,0.024447,1.571429,0.917512,0.857143,Ads Volume,Monetization,negative
+com.dreamgames.royalkingdom,Royal Kingdom,ads_quality,2,0.002328,1.0,1.488941,1.0,Ads Quality,Monetization,negative
+com.dreamgames.royalkingdom,Royal Kingdom,pay_to_win,14,0.016298,1.214286,1.274655,0.928571,Pay-to-win / Greedy,Monetization,negative
+com.dreamgames.royalkingdom,Royal Kingdom,difficulty_progression,13,0.015134,1.923077,0.565864,0.769231,Difficulty & Progression,Game Design,negative
+com.dreamgames.royalkingdom,Royal Kingdom,algorithm_fairness,3,0.003492,1.333333,1.155607,1.0,Algorithm Fairness,Game Design,negative
+com.dreamgames.royalkingdom,Royal Kingdom,update_issue,4,0.004657,2.25,0.238941,0.5,Update Issue,Operations,negative
+com.dreamgames.royalkingdom,Royal Kingdom,fun_addictive,161,0.187427,3.795031,-1.30609,0.26087,Fun & Addictive,Positive,positive
+com.dreamgames.royalkingdom,Royal Kingdom,visual_graphics,10,0.011641,4.6,-2.111059,0.1,Visual & Graphics,Positive,positive
+com.dreamgames.royalkingdom,Royal Kingdom,story_decoration,16,0.018626,2.875,-0.386059,0.5,Story & Decoration,Positive,positive
+com.dreamgames.royalkingdom,Royal Kingdom,social_team,13,0.015134,3.076923,-0.587982,0.384615,Social & Team,Positive,positive
+com.dreamgames.royalkingdom,Royal Kingdom,updates_new_content,1,0.001164,1.0,1.488941,1.0,Updates & New Content,Positive,positive
+com.dreamgames.royalmatch,Royal Match,crash_bug,7,0.010234,1.571429,1.757519,0.857143,Crash & Bug,Stability,negative
+com.dreamgames.royalmatch,Royal Match,loading_performance,18,0.026316,2.222222,1.106725,0.611111,Loading & Performance,Performance,negative
+com.dreamgames.royalmatch,Royal Match,ads_volume,4,0.005848,2.5,0.828947,0.25,Ads Volume,Monetization,negative
+com.dreamgames.royalmatch,Royal Match,pay_to_win,22,0.032164,1.454545,1.874402,0.772727,Pay-to-win / Greedy,Monetization,negative
+com.dreamgames.royalmatch,Royal Match,difficulty_progression,18,0.026316,1.777778,1.55117,0.777778,Difficulty & Progression,Game Design,negative
+com.dreamgames.royalmatch,Royal Match,algorithm_fairness,8,0.011696,1.25,2.078947,1.0,Algorithm Fairness,Game Design,negative
+com.dreamgames.royalmatch,Royal Match,update_issue,2,0.002924,1.0,2.328947,1.0,Update Issue,Operations,negative
+com.dreamgames.royalmatch,Royal Match,liveops_events,1,0.001462,4.0,-0.671053,0.0,LiveOps & Events,Operations,negative
+com.dreamgames.royalmatch,Royal Match,fun_addictive,149,0.217836,4.060403,-0.731455,0.167785,Fun & Addictive,Positive,positive
+com.dreamgames.royalmatch,Royal Match,visual_graphics,4,0.005848,4.5,-1.171053,0.0,Visual & Graphics,Positive,positive
+com.dreamgames.royalmatch,Royal Match,story_decoration,4,0.005848,3.75,-0.421053,0.25,Story & Decoration,Positive,positive
+com.dreamgames.royalmatch,Royal Match,social_team,19,0.027778,3.315789,0.013158,0.368421,Social & Team,Positive,positive
+com.dreamgames.royalmatch,Royal Match,updates_new_content,2,0.002924,1.0,2.328947,1.0,Updates & New Content,Positive,positive
+com.king.candycrushsaga,Candy Crush Saga,crash_bug,5,0.009747,2.8,1.42807,0.6,Crash & Bug,Stability,negative
+com.king.candycrushsaga,Candy Crush Saga,loading_performance,7,0.013645,1.714286,2.513784,0.714286,Loading & Performance,Performance,negative
+com.king.candycrushsaga,Candy Crush Saga,pay_to_win,1,0.001949,1.0,3.22807,1.0,Pay-to-win / Greedy,Monetization,negative
+com.king.candycrushsaga,Candy Crush Saga,purchase_issue,2,0.003899,4.0,0.22807,0.0,Purchase Issue,Monetization,negative
+com.king.candycrushsaga,Candy Crush Saga,difficulty_progression,3,0.005848,2.333333,1.894737,0.666667,Difficulty & Progression,Game Design,negative
+com.king.candycrushsaga,Candy Crush Saga,algorithm_fairness,1,0.001949,2.0,2.22807,1.0,Algorithm Fairness,Game Design,negative
+com.king.candycrushsaga,Candy Crush Saga,fun_addictive,154,0.300195,4.616883,-0.388813,0.051948,Fun & Addictive,Positive,positive
+com.king.candycrushsaga,Candy Crush Saga,visual_graphics,5,0.009747,4.8,-0.57193,0.0,Visual & Graphics,Positive,positive
+com.king.candycrushsaga,Candy Crush Saga,story_decoration,1,0.001949,5.0,-0.77193,0.0,Story & Decoration,Positive,positive
+com.king.candycrushsaga,Candy Crush Saga,social_team,5,0.009747,4.4,-0.17193,0.2,Social & Team,Positive,positive
+com.king.candycrushsaga,Candy Crush Saga,updates_new_content,1,0.001949,5.0,-0.77193,0.0,Updates & New Content,Positive,positive
+com.king.candycrushsodasaga,Candy Crush Soda Saga,crash_bug,18,0.027692,2.5,1.467692,0.5,Crash & Bug,Stability,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,loading_performance,9,0.013846,2.444444,1.523248,0.555556,Loading & Performance,Performance,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,ads_volume,1,0.001538,1.0,2.967692,1.0,Ads Volume,Monetization,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,pay_to_win,5,0.007692,1.4,2.567692,1.0,Pay-to-win / Greedy,Monetization,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,purchase_issue,2,0.003077,1.0,2.967692,1.0,Purchase Issue,Monetization,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,difficulty_progression,12,0.018462,1.583333,2.384359,0.833333,Difficulty & Progression,Game Design,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,algorithm_fairness,2,0.003077,2.0,1.967692,0.5,Algorithm Fairness,Game Design,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,rewards_energy,1,0.001538,3.0,0.967692,0.0,Rewards & Energy,Game Design,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,update_issue,3,0.004615,2.333333,1.634359,0.666667,Update Issue,Operations,negative
+com.king.candycrushsodasaga,Candy Crush Soda Saga,fun_addictive,187,0.287692,4.534759,-0.567067,0.085561,Fun & Addictive,Positive,positive
+com.king.candycrushsodasaga,Candy Crush Soda Saga,visual_graphics,4,0.006154,5.0,-1.032308,0.0,Visual & Graphics,Positive,positive
+com.king.candycrushsodasaga,Candy Crush Soda Saga,story_decoration,1,0.001538,5.0,-1.032308,0.0,Story & Decoration,Positive,positive
+com.king.candycrushsodasaga,Candy Crush Soda Saga,social_team,5,0.007692,3.6,0.367692,0.4,Social & Team,Positive,positive
+com.king.candycrushsodasaga,Candy Crush Soda Saga,updates_new_content,3,0.004615,3.333333,0.634359,0.333333,Updates & New Content,Positive,positive
+com.playrix.gardenscapes,Gardenscapes,crash_bug,12,0.019048,1.75,1.73254,0.833333,Crash & Bug,Stability,negative
+com.playrix.gardenscapes,Gardenscapes,loading_performance,18,0.028571,2.166667,1.315873,0.611111,Loading & Performance,Performance,negative
+com.playrix.gardenscapes,Gardenscapes,pay_to_win,12,0.019048,1.5,1.98254,0.833333,Pay-to-win / Greedy,Monetization,negative
+com.playrix.gardenscapes,Gardenscapes,purchase_issue,3,0.004762,2.333333,1.149206,0.666667,Purchase Issue,Monetization,negative
+com.playrix.gardenscapes,Gardenscapes,difficulty_progression,25,0.039683,2.44,1.04254,0.6,Difficulty & Progression,Game Design,negative
+com.playrix.gardenscapes,Gardenscapes,algorithm_fairness,7,0.011111,1.0,2.48254,1.0,Algorithm Fairness,Game Design,negative
+com.playrix.gardenscapes,Gardenscapes,update_issue,12,0.019048,1.666667,1.815873,0.75,Update Issue,Operations,negative
+com.playrix.gardenscapes,Gardenscapes,liveops_events,1,0.001587,5.0,-1.51746,0.0,LiveOps & Events,Operations,negative
+com.playrix.gardenscapes,Gardenscapes,fun_addictive,169,0.268254,4.236686,-0.754147,0.16568,Fun & Addictive,Positive,positive
+com.playrix.gardenscapes,Gardenscapes,visual_graphics,5,0.007937,4.6,-1.11746,0.0,Visual & Graphics,Positive,positive
+com.playrix.gardenscapes,Gardenscapes,story_decoration,31,0.049206,3.129032,0.353507,0.483871,Story & Decoration,Positive,positive
+com.playrix.gardenscapes,Gardenscapes,social_team,22,0.034921,2.909091,0.573449,0.454545,Social & Team,Positive,positive
+com.playrix.homescapes,Homescapes,crash_bug,13,0.019345,1.923077,1.901328,0.615385,Crash & Bug,Stability,negative
+com.playrix.homescapes,Homescapes,loading_performance,29,0.043155,3.275862,0.548543,0.275862,Loading & Performance,Performance,negative
+com.playrix.homescapes,Homescapes,ads_volume,1,0.001488,1.0,2.824405,1.0,Ads Volume,Monetization,negative
+com.playrix.homescapes,Homescapes,pay_to_win,6,0.008929,2.166667,1.657738,0.666667,Pay-to-win / Greedy,Monetization,negative
+com.playrix.homescapes,Homescapes,purchase_issue,3,0.004464,2.333333,1.491071,0.666667,Purchase Issue,Monetization,negative
+com.playrix.homescapes,Homescapes,difficulty_progression,26,0.03869,2.192308,1.632097,0.653846,Difficulty & Progression,Game Design,negative
+com.playrix.homescapes,Homescapes,algorithm_fairness,3,0.004464,1.666667,2.157738,0.666667,Algorithm Fairness,Game Design,negative
+com.playrix.homescapes,Homescapes,update_issue,5,0.00744,2.4,1.424405,0.6,Update Issue,Operations,negative
+com.playrix.homescapes,Homescapes,fun_addictive,156,0.232143,4.487179,-0.662775,0.083333,Fun & Addictive,Positive,positive
+com.playrix.homescapes,Homescapes,visual_graphics,8,0.011905,4.875,-1.050595,0.0,Visual & Graphics,Positive,positive
+com.playrix.homescapes,Homescapes,story_decoration,18,0.026786,3.555556,0.268849,0.277778,Story & Decoration,Positive,positive
+com.playrix.homescapes,Homescapes,social_team,10,0.014881,3.0,0.824405,0.5,Social & Team,Positive,positive
+com.rovio.angrybirdsfriends,Angry Birds Friends,crash_bug,49,0.068917,2.285714,1.313442,0.612245,Crash & Bug,Stability,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,loading_performance,26,0.036568,2.0,1.599156,0.692308,Loading & Performance,Performance,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,ads_volume,4,0.005626,1.5,2.099156,0.75,Ads Volume,Monetization,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,pay_to_win,13,0.018284,1.615385,1.983772,0.846154,Pay-to-win / Greedy,Monetization,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,difficulty_progression,8,0.011252,3.0,0.599156,0.375,Difficulty & Progression,Game Design,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,algorithm_fairness,8,0.011252,1.75,1.849156,0.75,Algorithm Fairness,Game Design,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,account_login,2,0.002813,1.5,2.099156,1.0,Account & Login,Account,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,ui_navigation,1,0.001406,1.0,2.599156,1.0,UI / Navigation,UX,negative
+com.rovio.angrybirdsfriends,Angry Birds Friends,fun_addictive,145,0.203938,4.365517,-0.766361,0.124138,Fun & Addictive,Positive,positive
+com.rovio.angrybirdsfriends,Angry Birds Friends,visual_graphics,2,0.002813,4.5,-0.900844,0.0,Visual & Graphics,Positive,positive
+com.rovio.angrybirdsfriends,Angry Birds Friends,story_decoration,1,0.001406,2.0,1.599156,1.0,Story & Decoration,Positive,positive
+com.rovio.angrybirdsfriends,Angry Birds Friends,social_team,22,0.030942,3.863636,-0.26448,0.272727,Social & Team,Positive,positive
+com.rovio.angrybirdsfriends,Angry Birds Friends,updates_new_content,2,0.002813,4.0,-0.400844,0.0,Updates & New Content,Positive,positive
+com.rovio.dream,Angry Birds Dream Blast,crash_bug,61,0.072533,2.0,1.766944,0.704918,Crash & Bug,Stability,negative
+com.rovio.dream,Angry Birds Dream Blast,loading_performance,33,0.039239,2.454545,1.312399,0.545455,Loading & Performance,Performance,negative
+com.rovio.dream,Angry Birds Dream Blast,ads_volume,3,0.003567,2.333333,1.433611,0.666667,Ads Volume,Monetization,negative
+com.rovio.dream,Angry Birds Dream Blast,ads_quality,1,0.001189,1.0,2.766944,1.0,Ads Quality,Monetization,negative
+com.rovio.dream,Angry Birds Dream Blast,pay_to_win,11,0.01308,1.363636,2.403308,0.818182,Pay-to-win / Greedy,Monetization,negative
+com.rovio.dream,Angry Birds Dream Blast,purchase_issue,3,0.003567,1.333333,2.433611,1.0,Purchase Issue,Monetization,negative
+com.rovio.dream,Angry Birds Dream Blast,difficulty_progression,12,0.014269,3.25,0.516944,0.333333,Difficulty & Progression,Game Design,negative
+com.rovio.dream,Angry Birds Dream Blast,algorithm_fairness,6,0.007134,2.5,1.266944,0.333333,Algorithm Fairness,Game Design,negative
+com.rovio.dream,Angry Birds Dream Blast,rewards_energy,1,0.001189,4.0,-0.233056,0.0,Rewards & Energy,Game Design,negative
+com.rovio.dream,Angry Birds Dream Blast,update_issue,8,0.009512,2.75,1.016944,0.5,Update Issue,Operations,negative
+com.rovio.dream,Angry Birds Dream Blast,fun_addictive,349,0.414982,4.501433,-0.734489,0.083095,Fun & Addictive,Positive,positive
+com.rovio.dream,Angry Birds Dream Blast,visual_graphics,35,0.041617,4.857143,-1.090199,0.028571,Visual & Graphics,Positive,positive
+com.rovio.dream,Angry Birds Dream Blast,story_decoration,1,0.001189,3.0,0.766944,0.0,Story & Decoration,Positive,positive
+com.rovio.dream,Angry Birds Dream Blast,social_team,13,0.015458,3.230769,0.536175,0.461538,Social & Team,Positive,positive
+com.rovio.dream,Angry Birds Dream Blast,updates_new_content,4,0.004756,5.0,-1.233056,0.0,Updates & New Content,Positive,positive
+dk.tactile.lilysgarden,Lily's Garden,crash_bug,68,0.068205,2.323529,1.410673,0.617647,Crash & Bug,Stability,negative
+dk.tactile.lilysgarden,Lily's Garden,loading_performance,52,0.052156,2.634615,1.099587,0.557692,Loading & Performance,Performance,negative
+dk.tactile.lilysgarden,Lily's Garden,ads_volume,2,0.002006,3.0,0.734203,0.5,Ads Volume,Monetization,negative
+dk.tactile.lilysgarden,Lily's Garden,pay_to_win,9,0.009027,2.0,1.734203,0.777778,Pay-to-win / Greedy,Monetization,negative
+dk.tactile.lilysgarden,Lily's Garden,purchase_issue,2,0.002006,1.0,2.734203,1.0,Purchase Issue,Monetization,negative
+dk.tactile.lilysgarden,Lily's Garden,difficulty_progression,26,0.026078,3.192308,0.541895,0.346154,Difficulty & Progression,Game Design,negative
+dk.tactile.lilysgarden,Lily's Garden,algorithm_fairness,2,0.002006,1.5,2.234203,1.0,Algorithm Fairness,Game Design,negative
+dk.tactile.lilysgarden,Lily's Garden,update_issue,28,0.028084,2.75,0.984203,0.428571,Update Issue,Operations,negative
+dk.tactile.lilysgarden,Lily's Garden,account_login,2,0.002006,4.0,-0.265797,0.0,Account & Login,Account,negative
+dk.tactile.lilysgarden,Lily's Garden,fun_addictive,378,0.379137,4.439153,-0.704951,0.103175,Fun & Addictive,Positive,positive
+dk.tactile.lilysgarden,Lily's Garden,visual_graphics,42,0.042126,4.809524,-1.075321,0.0,Visual & Graphics,Positive,positive
+dk.tactile.lilysgarden,Lily's Garden,story_decoration,201,0.201605,4.139303,-0.405101,0.174129,Story & Decoration,Positive,positive
+dk.tactile.lilysgarden,Lily's Garden,social_team,22,0.022066,4.181818,-0.447616,0.136364,Social & Team,Positive,positive
+dk.tactile.lilysgarden,Lily's Garden,updates_new_content,5,0.005015,3.8,-0.065797,0.2,Updates & New Content,Positive,positive
+dk.tactile.mansionstory,Penny & Flo,crash_bug,63,0.063895,2.920635,1.019527,0.396825,Crash & Bug,Stability,negative
+dk.tactile.mansionstory,Penny & Flo,loading_performance,33,0.033469,3.030303,0.909859,0.393939,Loading & Performance,Performance,negative
+dk.tactile.mansionstory,Penny & Flo,ads_volume,16,0.016227,2.1875,1.752662,0.625,Ads Volume,Monetization,negative
+dk.tactile.mansionstory,Penny & Flo,pay_to_win,8,0.008114,1.625,2.315162,0.875,Pay-to-win / Greedy,Monetization,negative
+dk.tactile.mansionstory,Penny & Flo,purchase_issue,4,0.004057,1.5,2.440162,0.75,Purchase Issue,Monetization,negative
+dk.tactile.mansionstory,Penny & Flo,difficulty_progression,30,0.030426,2.966667,0.973496,0.4,Difficulty & Progression,Game Design,negative
+dk.tactile.mansionstory,Penny & Flo,algorithm_fairness,3,0.003043,2.666667,1.273496,0.666667,Algorithm Fairness,Game Design,negative
+dk.tactile.mansionstory,Penny & Flo,update_issue,11,0.011156,2.636364,1.303799,0.545455,Update Issue,Operations,negative
+dk.tactile.mansionstory,Penny & Flo,account_login,2,0.002028,2.0,1.940162,0.5,Account & Login,Account,negative
+dk.tactile.mansionstory,Penny & Flo,fun_addictive,370,0.375254,4.435135,-0.494973,0.094595,Fun & Addictive,Positive,positive
+dk.tactile.mansionstory,Penny & Flo,visual_graphics,39,0.039554,4.564103,-0.62394,0.051282,Visual & Graphics,Positive,positive
+dk.tactile.mansionstory,Penny & Flo,story_decoration,240,0.243408,4.091667,-0.151504,0.154167,Story & Decoration,Positive,positive
+dk.tactile.mansionstory,Penny & Flo,social_team,19,0.01927,3.578947,0.361215,0.210526,Social & Team,Positive,positive
+dk.tactile.mansionstory,Penny & Flo,updates_new_content,6,0.006085,2.5,1.440162,0.5,Updates & New Content,Positive,positive
+net.peakgames.amy,Toy Blast,crash_bug,19,0.025333,2.315789,1.572211,0.631579,Crash & Bug,Stability,negative
+net.peakgames.amy,Toy Blast,loading_performance,19,0.025333,2.315789,1.572211,0.578947,Loading & Performance,Performance,negative
+net.peakgames.amy,Toy Blast,ads_volume,4,0.005333,2.5,1.388,0.5,Ads Volume,Monetization,negative
+net.peakgames.amy,Toy Blast,pay_to_win,5,0.006667,1.4,2.488,0.8,Pay-to-win / Greedy,Monetization,negative
+net.peakgames.amy,Toy Blast,purchase_issue,1,0.001333,1.0,2.888,1.0,Purchase Issue,Monetization,negative
+net.peakgames.amy,Toy Blast,difficulty_progression,14,0.018667,2.928571,0.959429,0.5,Difficulty & Progression,Game Design,negative
+net.peakgames.amy,Toy Blast,algorithm_fairness,6,0.008,1.5,2.388,0.833333,Algorithm Fairness,Game Design,negative
+net.peakgames.amy,Toy Blast,update_issue,4,0.005333,2.75,1.138,0.25,Update Issue,Operations,negative
+net.peakgames.amy,Toy Blast,fun_addictive,275,0.366667,4.585455,-0.697455,0.076364,Fun & Addictive,Positive,positive
+net.peakgames.amy,Toy Blast,visual_graphics,18,0.024,4.277778,-0.389778,0.166667,Visual & Graphics,Positive,positive
+net.peakgames.amy,Toy Blast,story_decoration,1,0.001333,4.0,-0.112,0.0,Story & Decoration,Positive,positive
+net.peakgames.amy,Toy Blast,social_team,16,0.021333,2.8125,1.0755,0.4375,Social & Team,Positive,positive
+net.peakgames.amy,Toy Blast,updates_new_content,2,0.002667,3.0,0.888,0.5,Updates & New Content,Positive,positive
+net.peakgames.toonblast,Toon Blast,crash_bug,28,0.035578,2.035714,1.36581,0.642857,Crash & Bug,Stability,negative
+net.peakgames.toonblast,Toon Blast,loading_performance,19,0.024142,2.526316,0.875209,0.578947,Loading & Performance,Performance,negative
+net.peakgames.toonblast,Toon Blast,pay_to_win,19,0.024142,1.263158,2.138367,0.947368,Pay-to-win / Greedy,Monetization,negative
+net.peakgames.toonblast,Toon Blast,purchase_issue,7,0.008895,2.0,1.401525,0.714286,Purchase Issue,Monetization,negative
+net.peakgames.toonblast,Toon Blast,difficulty_progression,15,0.01906,2.533333,0.868191,0.6,Difficulty & Progression,Game Design,negative
+net.peakgames.toonblast,Toon Blast,algorithm_fairness,4,0.005083,1.0,2.401525,1.0,Algorithm Fairness,Game Design,negative
+net.peakgames.toonblast,Toon Blast,update_issue,2,0.002541,3.0,0.401525,0.5,Update Issue,Operations,negative
+net.peakgames.toonblast,Toon Blast,account_login,2,0.002541,3.5,-0.098475,0.0,Account & Login,Account,negative
+net.peakgames.toonblast,Toon Blast,fun_addictive,250,0.317662,4.148,-0.746475,0.176,Fun & Addictive,Positive,positive
+net.peakgames.toonblast,Toon Blast,visual_graphics,11,0.013977,4.454545,-1.053021,0.090909,Visual & Graphics,Positive,positive
+net.peakgames.toonblast,Toon Blast,story_decoration,1,0.001271,1.0,2.401525,1.0,Story & Decoration,Positive,positive
+net.peakgames.toonblast,Toon Blast,social_team,30,0.038119,3.233333,0.168191,0.433333,Social & Team,Positive,positive
+net.peakgames.toonblast,Toon Blast,updates_new_content,8,0.010165,3.375,0.026525,0.375,Updates & New Content,Positive,positive
