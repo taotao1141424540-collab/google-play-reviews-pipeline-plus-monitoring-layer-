@@ -1,0 +1,19 @@
+﻿theme_id,theme_label,category,polarity,n_reviews,theme_share,rating_gap,share_low_1_2,is_critical,frequency_norm,impact_norm,severity_norm,priority_score,priority_rank,priority_bucket,recommended_owner,recommended_action
+crash_bug,Crash & Bug,Stability,negative,443,0.040494,1.278212,0.568849,1,1.0,0.47774642749419455,0.568849,0.40764836630046763,1,P0,Engineering,Prioritize crash triage and top-stack fixes in next release.
+pay_to_win,Pay-to-win / Greedy,Monetization,negative,154,0.014077,2.071607,0.792208,0,0.34763174791327106,0.7742869284766267,0.792208,0.21323602759693353,2,P0,Product + Economy,"Rebalance economy pressure (moves, boosters, paywall pacing)."
+loading_performance,Loading & Performance,Performance,negative,343,0.031353,1.080751,0.51895,0,0.7742628537561119,0.4039431090153889,0.51895,0.1623058390059546,3,P0,Engineering,Optimize cold-start/loading path and reduce lag spikes.
+difficulty_progression,Difficulty & Progression,Game Design,negative,216,0.019744,1.031984,0.523148,0,0.4875784066775325,0.3857158822098125,0.523148,0.09838673642725655,4,P0,Game Design,Tune progression curve and reduce hard-level clustering.
+algorithm_fairness,Algorithm Fairness,Game Design,negative,62,0.005667,1.949696,0.758065,0,0.13994665876426138,0.7287212909124005,0.758065,0.07730906809098506,5,P1,Game Design,Audit RNG fairness perception and expose clearer game feedback.
+purchase_issue,Purchase Issue,Monetization,negative,35,0.003199,1.875503,0.771429,1,0.0789993579295698,0.7009908043459492,0.771429,0.06408008845841331,6,P0,Product + Economy,Fix purchase failure/refund edge-cases and monitor payment errors.
+ads_volume,Ads Volume,Monetization,negative,78,0.00713,1.431913,0.615385,0,0.17607546797056353,0.5351939429707236,0.615385,0.05799051252932845,7,P1,Product + Economy,"Reduce ad frequency, especially in early progression and fail loops."
+update_issue,Update Issue,Operations,negative,90,0.008227,1.186614,0.522222,0,0.20316590112115374,0.4435106221147949,0.522222,0.04705545835796465,8,P2,LiveOps,Add pre-release regression checklist and staged rollout guardrails.
+ads_quality,Ads Quality,Monetization,negative,3,0.000274,2.675503,1.0,0,0.006766434533511137,1.0,1.0,0.006766434533511137,9,P2,Product + Economy,Block low-quality ad creatives and tighten ad network filters.
+account_login,Account & Login,Account,negative,8,0.000731,0.925503,0.375,1,0.01805205709487825,0.3459173845067638,0.375,0.0035125427110652176,10,P0,Platform/Backend,Stabilize login/sync flows and progress restoration paths.
+ui_navigation,UI / Navigation,UX,negative,1,9.1e-05,2.675503,1.0,0,0.002247246505655159,1.0,1.0,0.002247246505655159,11,P3,UX,Simplify menu/findability and improve tutorial guidance.
+rewards_energy,Rewards & Energy,Game Design,negative,2,0.000183,0.175503,0.0,0,0.004519188027855978,0.06559626358109111,0.0,0.0,12,P3,Game Design,Adjust rewards/energy pacing to reduce frustration loops.
+liveops_events,LiveOps & Events,Operations,negative,2,0.000183,-0.824497,0.0,0,0.004519188027855978,0.0,0.0,0.0,12,P3,LiveOps,Improve event QA and tournament stability before campaign launch.
+fun_addictive,Fun & Addictive,Positive,positive,3567,0.326051,-0.728759,0.107093,0,0.0,0.0,0.0,0.0,0,P3,Core Product,Preserve and amplify this positive driver.
+story_decoration,Story & Decoration,Positive,positive,519,0.047441,-0.307156,0.198459,0,0.0,0.0,0.0,0.0,0,P3,Core Product,Preserve and amplify this positive driver.
+visual_graphics,Visual & Graphics,Positive,positive,239,0.021846,-0.893535,0.062762,0,0.0,0.0,0.0,0.0,0,P3,Core Product,Preserve and amplify this positive driver.
+social_team,Social & Team,Positive,positive,230,0.021024,0.24072,0.33913,0,0.0,0.0,0.0,0.0,0,P3,Core Product,Preserve and amplify this positive driver.
+updates_new_content,Updates & New Content,Positive,positive,39,0.003565,0.213964,0.307692,0,0.0,0.0,0.0,0.0,0,P3,Core Product,Preserve and amplify this positive driver.
