@@ -10,7 +10,7 @@ Aligned with:
   scripts/06_insights/build_competitor_benchmark_tables.py
 
 Output:
-  reports/tables/Competitor_Metrics_Insights_Report.pdf
+  reports/每日复盘/Competitor_Metrics_Insights_Report.pdf
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT_PDF = ROOT / "reports" / "tables" / "Competitor_Metrics_Insights_Report.pdf"
+OUT_PDF = ROOT / "reports" / "每日复盘" / "Competitor_Metrics_Insights_Report.pdf"
 QUALITY = ROOT / "reports" / "quality_report.csv"
 METRICS_JSON = ROOT / "config" / "metrics.json"
 HEALTH = ROOT / "reports" / "tables" / "app_health_score.csv"

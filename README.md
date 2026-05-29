@@ -109,6 +109,7 @@ Main outputs: **`clean_all_languages.csv`** (post-P0, all languages) and **`clea
 | **`scripts/06_insights/`** | `build_review_themes.py` | Rule-based multi-label tags → **`data/processed/reviews_with_themes.csv`** |
 | **`scripts/06_insights/`** | `build_theme_summary_tables.py` | Theme summaries → **`reports/tables/theme_summary_*.csv`** |
 | **`scripts/06_insights/`** | `sample_theme_validation.py` | Stratified sample for manual theme validation → **`reports/tables/theme_validation_sample.csv`** |
+| **`scripts/06_insights/`** | `build_priority_recommendation_tables.py` | Day 5 priority/recommendation tables → **`reports/tables/theme_priority_*.csv`**, **`recommendation_matrix.csv`** |
 
 ---
 
@@ -149,7 +150,8 @@ export MPLCONFIGDIR="$(pwd)/.mplconfig" && mkdir -p .mplconfig
 | 15 | `python3 scripts/06_insights/build_review_themes.py` | `config/themes.yml` + `clean_en_only.csv` |
 | 16 | `python3 scripts/06_insights/build_theme_summary_tables.py` | `reviews_with_themes.csv` |
 | 17 | `python3 scripts/06_insights/sample_theme_validation.py` | Optional: generate manual-review sample (`reports/tables/theme_validation_sample.csv`) |
-| 18 | `python3 scripts/06_insights/apply_time_window_sampling.py …` | Optional; see `--help` |
+| 18 | `python3 scripts/06_insights/build_priority_recommendation_tables.py` | Day 5 BQ5 tables from `theme_summary_overall.csv` + `theme_summary_by_app.csv` |
+| 19 | `python3 scripts/06_insights/apply_time_window_sampling.py …` | Optional; see `--help` |
 
 **Do not run `sql/schema.sql` alone for normal workflow:** `load_to_sqlite.py` applies it via `executescript(schema.sql)` after connecting.
 
@@ -205,6 +207,7 @@ python3 scripts/06_insights/build_competitor_benchmark_tables.py
 python3 scripts/04_export/build_competitor_insights_report_pdf.py
 python3 scripts/06_insights/build_review_themes.py
 python3 scripts/06_insights/build_theme_summary_tables.py
+python3 scripts/06_insights/build_priority_recommendation_tables.py
 ```
 
 Run **`apply_time_window_sampling.py`** when needed (see in-script examples).
@@ -222,7 +225,8 @@ Run **`apply_time_window_sampling.py`** when needed (see in-script examples).
 | Spikes | `docs/spike_dates_top10.csv`, `docs/export_spike_days_readme.md` |
 | Warehouse | `data/warehouse/play_reviews.db`, `play_reviews_en.db` |
 | Verification text | `docs/sqlite_verification_results*.txt` |
-| Metrics / benchmark | `reports/tables/app_base_metrics.csv`, `app_health_score.csv`, `app_benchmark_bq2.csv`, `Competitor_Metrics_Insights_Report.pdf` |
+| Metrics / benchmark | `reports/tables/app_base_metrics.csv`, `app_health_score.csv`, `app_benchmark_bq2.csv` |
+| Daily review PDFs (每日复盘) | `reports/每日复盘/Competitor_Metrics_Insights_Report.pdf`, `Metrics_Data_Dictionary.pdf`, `Day4_Themes_Plain_Report.pdf`, `Day5_Priority_Plain_Report.pdf` |
 | Modeling subset (if run) | `data/processed/clean_en_time_window.csv`, `time_window_sampling_manifest.json` |
 
 ---
